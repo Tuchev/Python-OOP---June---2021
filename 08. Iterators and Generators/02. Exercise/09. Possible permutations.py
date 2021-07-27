@@ -1,4 +1,4 @@
-def all_pemutations(seq):
+def all_permutations(seq):
     if len(seq) == 0:
         return []
 
@@ -12,13 +12,13 @@ def all_pemutations(seq):
 
         remlist = seq[:i] + seq[i+1:]
 
-        for p in all_pemutations(remlist):
+        for p in all_permutations(remlist):
             l.append([m] + p)
     return l
 
 
 def possible_permutations(seq):
-    perms = all_pemutations(seq)
+    perms = all_permutations(seq)
     for perm in perms:
         yield perm
 
